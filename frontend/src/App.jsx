@@ -55,7 +55,7 @@ function App() {
                 <Header className="premium-header">
                     <div className="header-content-inner">
                         <Link to="/" className="app-logo-link">
-                            <img src="/logo.jpeg" alt="Jyothu Travels" className="app-logo-image" />
+                            <img src="/logo-new.jpg" alt="Jyothu Travels" className="app-logo-image" />
                         </Link>
 
                         {/* Desktop Menu */}
@@ -125,7 +125,7 @@ function App() {
                         </Routes>
                     </div>
                 </Content>
-                <Footer style={{ textAlign: 'center', padding: '60px 0', background: 'white', color: '#64748b', borderTop: '1px solid #f1f5f9' }}>
+                <Footer style={{ textAlign: 'center', padding: '60px 0', background: 'lightblue', color: '#050c15ff', borderTop: '1px solid #f1f5f9' }}>
                     <div style={{ marginBottom: 20 }}>
                         <Title level={4} style={{ color: 'var(--primary-deep)', margin: 0 }}>JYOTHU TRAVELS AND TOURISM</Title>
                         <Text type="secondary">Your reliable travel partner in Hubli</Text>

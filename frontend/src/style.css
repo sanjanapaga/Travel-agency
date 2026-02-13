@@ -62,7 +62,7 @@ body {
 }
 
 .premium-header {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: #e2e8f0 !important;
   backdrop-filter: blur(15px);
   padding: 0 !important;
   height: 90px !important;
@@ -130,8 +130,8 @@ body {
 }
 
 .app-logo-image {
-  height: 95px;
-  /* Increased size */
+  height: 100px;
+  /* Reduced size */
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -139,7 +139,7 @@ body {
   mix-blend-mode: multiply;
   filter: contrast(1.1);
   margin-top: 25px;
-  margin-left: 60px;
+  margin-left: 90px;
   /* Moved further to the right */
 }
 
@@ -184,10 +184,10 @@ body {
 /* Hero Section Enhanced */
 .hero-dashboard {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  padding: 150px 80px 100px !important;
+  padding: 80px 80px 40px !important;
   /* Balanced gap for 90px header */
   border-radius: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   color: #1e293b;
   position: relative;
   overflow: hidden;
@@ -521,6 +521,73 @@ body {
   background: #f3e8ff;
   color: #a855f7;
 }
+
+/* Feature Items Modern */
+.feature-item-modern {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-item-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
+}
+
+.feature-item-modern .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  background: #f1f5f9;
+  color: var(--slate);
+}
+
+.feature-item-modern .feature-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-item-modern .icon-wrapper.blue {
+  background: #e0f2fe;
+  color: #0ea5e9;
+}
+
+.feature-item-modern .icon-wrapper.orange {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.feature-item-modern .icon-wrapper.green {
+  background: #d1fae5;
+  color: #10b981;
+}
+
+.feature-item-modern .icon-wrapper.purple {
+  background: #f3e8ff;
+  color: #a855f7;
+}
+
+.feature-item-modern .icon-wrapper.red {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
 
 /* Fleet Cards Premium */
 .fleet-card-premium {

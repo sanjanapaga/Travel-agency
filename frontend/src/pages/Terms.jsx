@@ -20,7 +20,6 @@ const Terms = () => {
                 <div className="terms-content">
                     <ul>
                         <li>Minimum 300 kms per day billing.</li>
-                        <li>If GST bill required → 5% GST extra.</li>
                         <li>Toll, Parking & Inter-State Permit charges extra, borne by customer.</li>
                         <li>Driver Bata (6:00 AM – 10:00 PM) included.</li>
                         <li>Additional Driver Bata applies before 6:00 AM and after 10:00 PM.</li>
@@ -45,8 +44,6 @@ const Terms = () => {
                         <li>Local package: 8 hrs / 80 kms. Extra hours/kms charged as applicable.</li>
                         <li>Toll & Parking extra, borne by customer.</li>
                         <li>Extra Driver Bata applies before 6:00 AM and after 10:00 PM.</li>
-                        <li>Without GST bill → Opening/closing km & timings from guest pickup point.</li>
-                        <li>With GST bill → Opening/closing km & timings from office to office.</li>
                         <li>Pets not allowed inside cab.</li>
                         <li>No liability for luggage/valuables lost.</li>
                         <li>Natural calamity issues to be borne by customer.</li>
@@ -65,7 +62,6 @@ const Terms = () => {
                         <li>Cab cannot be diverted for multiple pickups or extra drops.</li>
                         <li>No waiting allowed during airport trips.</li>
                         <li>Toll & Parking charges extra, borne by customer.</li>
-                        <li>5% GST extra if GST bill required.</li>
                         <li>Pets not allowed inside cab.</li>
                         <li>No responsibility for luggage/valuables.</li>
                         <li>Natural calamity delays/cancellations to be borne by customer.</li>
@@ -109,6 +105,11 @@ const Terms = () => {
                             * Please review your billing and trip details before the journey begins to avoid any confusion.
                             By booking with us, you agree to all the terms mentioned above.
                         </Text>
+                        <div style={{ marginTop: '20px', padding: '15px', background: '#fef2f2', borderRadius: '12px', border: '1px solid #fecaca' }}>
+                            <Text strong style={{ color: '#ef4444', fontSize: '15px', display: 'block' }}>
+                                Note: After booking, the amount is not refundable.
+                            </Text>
+                        </div>
                     </div>
                 </Card>
             </div>

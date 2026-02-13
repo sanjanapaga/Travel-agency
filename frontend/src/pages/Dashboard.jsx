@@ -164,6 +164,48 @@ const Dashboard = () => {
 
     const travelPackages = [
         {
+            destination: "Hubli to Dandeli",
+            title: "🌿 Hubli to Dandeli",
+            subtitle: "8-in-1 Special Tour",
+            duration: "2 Nights / 3 Days",
+            tag: "Adventure",
+            image: "https://www.riverresortsdandeli.com/dandeli-adventures/dandeli-places/river-rafting-in-dandeli.jpg",
+            pricing: [
+                { vehicle: "4+1 Seater", price: "₹12,200/-" },
+                { vehicle: "6+1 Seater", price: "₹15,000/-" },
+                { vehicle: "13+1 Seater", price: "₹18,200/-" },
+                { vehicle: "21+1 Seater", price: "₹29,500/-" }
+            ]
+        },
+        {
+            destination: "Hubli to Gokarna",
+            title: "🏖️ Hubli to Gokarna",
+            subtitle: "8-in-1 Special Tour",
+            duration: "2 Nights / 3 Days",
+            tag: "Coastal",
+            image: "https://hblimg.mmtcdn.com/content/hubble/img/gokarna/mmt/activities/m_activities_gokarna_gokarna_beach_l_370_555.jpg",
+            pricing: [
+                { vehicle: "4+1 Seater", price: "₹12,200/-" },
+                { vehicle: "6+1 Seater", price: "₹15,000/-" },
+                { vehicle: "13+1 Seater", price: "₹18,200/-" },
+                { vehicle: "21+1 Seater", price: "₹29,500/-" }
+            ]
+        },
+        {
+            destination: "Hubli to Murudeshwar",
+            title: "🌊 Hubli to Murudeshwar",
+            subtitle: "8-in-1 Special Tour",
+            duration: "2 Nights / 3 Days",
+            tag: "Coastal",
+            image: "https://tripxl.com/blog/wp-content/uploads/2024/10/Murudeshwar-Temple-1.jpg",
+            pricing: [
+                { vehicle: "4+1 Seater", price: "₹12,200/-" },
+                { vehicle: "6+1 Seater", price: "₹15,000/-" },
+                { vehicle: "13+1 Seater", price: "₹18,200/-" },
+                { vehicle: "21+1 Seater", price: "₹29,500/-" }
+            ]
+        },
+        {
             destination: "Hubli to Mysore",
             title: "🏰 Hubli to Mysore",
             subtitle: "13-in-1 Special Tour",
@@ -287,20 +329,6 @@ const Dashboard = () => {
             ]
         },
         {
-            destination: "Hubli to Gokarna",
-            title: "🌊🌿 Hubli to Gokarna",
-            subtitle: "8-in-1 Special Tour",
-            duration: "2 Nights / 3 Days",
-            tag: "Coastal",
-            image: "https://hblimg.mmtcdn.com/content/hubble/img/tarkarli/mmt/activities/m_Gokarna_1_l_355_532.jpg",
-            pricing: [
-                { vehicle: "4+1 Seater", price: "₹12,200/-" },
-                { vehicle: "6+1 Seater", price: "₹15,000/-" },
-                { vehicle: "13+1 Seater", price: "₹18,200/-" },
-                { vehicle: "21+1 Seater", price: "₹29,500/-" }
-            ]
-        },
-        {
             destination: "Hubli to Dharmasthala",
             title: "🙏 Hubli to Dharmasthala",
             subtitle: "13-in-1 Special Tour",
@@ -312,34 +340,6 @@ const Dashboard = () => {
                 { vehicle: "6+1 Seater", price: "₹21,000/-" },
                 { vehicle: "13+1 Seater", price: "₹25,200/-" },
                 { vehicle: "21+1 Seater", price: "₹39,600/-" }
-            ]
-        },
-        {
-            destination: "Hubli to Murudeshwar",
-            title: "🌊 Hubli to Murudeshwar",
-            subtitle: "8-in-1 Special Tour",
-            duration: "2 Nights / 3 Days",
-            tag: "Coastal",
-            image: "https://tripxl.com/blog/wp-content/uploads/2024/10/Murudeshwar-Temple-1.jpg",
-            pricing: [
-                { vehicle: "4+1 Seater", price: "₹12,200/-" },
-                { vehicle: "6+1 Seater", price: "₹15,000/-" },
-                { vehicle: "13+1 Seater", price: "₹18,200/-" },
-                { vehicle: "21+1 Seater", price: "₹29,500/-" }
-            ]
-        },
-        {
-            destination: "Hubli to Dandeli",
-            title: "🌿 Hubli to Dandeli",
-            subtitle: "8-in-1 Special Tour",
-            duration: "2 Nights / 3 Days",
-            tag: "Adventure",
-            image: "https://www.riverresortsdandeli.com/dandeli-adventures/dandeli-places/river-rafting-in-dandeli.jpg",
-            pricing: [
-                { vehicle: "4+1 Seater", price: "₹12,200/-" },
-                { vehicle: "6+1 Seater", price: "₹15,000/-" },
-                { vehicle: "13+1 Seater", price: "₹18,200/-" },
-                { vehicle: "21+1 Seater", price: "₹29,500/-" }
             ]
         },
         {
@@ -377,6 +377,34 @@ const Dashboard = () => {
                 { vehicle: "25+1 Seater (Mini Bus)", price: "₹70,800/-" },
                 { vehicle: "29+1 Seater (Mini Bus)", price: "₹81,800/-" }
             ]
+        },
+        {
+            destination: "Hubli to Maharashtra",
+            title: "🙏 Hubli to Maharashtra",
+            subtitle: "13-in-1 Special Tour",
+            duration: "3 Nights / 4 Days",
+            tag: "Nature",
+            image: "https://media.licdn.com/dms/image/v2/D4E12AQHgMyuuNkuhSg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1683730423444?e=2147483647&v=beta&t=t5TVJzXXrUgr_OIA0YjPXoN8-vn4Y_8emCa9pwclfg8",
+            pricing: [
+                { vehicle: "4+1 Seater", price: "₹17,400/-" },
+                { vehicle: "6+1 Seater", price: "₹21,000/-" },
+                { vehicle: "13+1 Seater", price: "₹25,200/-" },
+                { vehicle: "21+1 Seater", price: "₹39,600/-" }
+            ]
+        },
+        {
+            destination: "Hubli to Madikeri",
+            title: "🌄 Hubli to Madikeri",
+            subtitle: "13-in-1 Special Tour",
+            duration: "3 Nights / 4 Days",
+            tag: "Hill Station",
+            image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1935&auto=format&fit=crop",
+            pricing: [
+                { vehicle: "4+1 Seater", price: "₹17,400/-" },
+                { vehicle: "6+1 Seater", price: "₹21,000/-" },
+                { vehicle: "13+1 Seater", price: "₹25,200/-" },
+                { vehicle: "21+1 Seater", price: "₹39,600/-" }
+            ]
         }
     ];
 
@@ -389,7 +417,8 @@ const Dashboard = () => {
             <div className="bg-blob blob-3"></div>
 
             {/* Hero Section */}
-            <section className="hero-dashboard">
+            <section className="hero-dashboard" style={{ position: 'relative' }}>
+
                 <Row align="middle" gutter={[40, 40]} style={{ width: '100%' }}>
                     <Col xs={24} lg={14}>
                         <div className="hero-content">
@@ -428,6 +457,7 @@ const Dashboard = () => {
                     <Col xs={24} lg={10} style={{ position: 'relative' }}>
                         <div className="hero-image-container">
                             <div className="hero-circle-bg"></div>
+
                             <img
                                 src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=2070&auto=format&fit=crop"
                                 alt="Red Premium Car"
@@ -435,7 +465,8 @@ const Dashboard = () => {
                                 style={{
                                     width: '120%',
                                     transform: 'translateX(10%)',
-                                    filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))'
+                                    filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))',
+                                    borderRadius: '30px'
                                 }}
                             />
                             <div className="experience-float-card">
@@ -452,7 +483,7 @@ const Dashboard = () => {
             </section>
 
             {/* Welcome Introduction Section - Premium Refined */}
-            <section className="welcome-intro-section">
+            <section className="welcome-intro-section" style={{ marginBottom: '20px' }}>
                 <Card className="welcome-card-premium">
                     <Row gutter={[60, 40]} align="middle">
                         <Col xs={24} lg={13}>
@@ -487,14 +518,7 @@ const Dashboard = () => {
                             </div>
                         </Col>
                         <Col xs={24} lg={11}>
-                            <div className="minibus-img-container">
-                                <img
-                                    src="https://purepng.com/public/uploads/large/purepng.com-mercedes-benz-party-minibuscarsmercedes-benz-961524660305smdit.png"
-                                    alt="Luxury Mini Bus"
-                                    className="minibus-image"
-                                />
-                            </div>
-                            <div className="features-unique-grid" style={{ marginTop: 40 }}>
+                            <div className="features-unique-grid" style={{ marginTop: 0 }}>
                                 <Row gutter={[15, 15]}>
                                     <Col span={12}>
                                         <div className="feature-item-modern inverted">
