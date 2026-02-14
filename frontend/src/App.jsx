@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Layout, Menu, theme, Button, Typography, Drawer } from 'antd';
 import {
     HomeOutlined,
@@ -21,11 +21,39 @@ import './style.css';
 const { Header, Content, Footer, Sider } = Layout;
 const { Title, Text } = Typography;
 
-function App() {
+function AppContent() {
     const [open, setOpen] = React.useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
+
+    // Handle smooth scroll when navigating to hash from other pages or on mount
+    React.useEffect(() => {
+        if (location.hash === '#packages') {
+            const element = document.getElementById('packages');
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [location]);
+
+    const handlePackagesClick = (e) => {
+        e.preventDefault();
+        setOpen(false);
+
+        if (location.pathname === '/') {
+            const packagesSection = document.getElementById('packages');
+            if (packagesSection) {
+                packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else {
+            navigate('/#packages');
+        }
+    };
 
     const menuItems = [
         {
@@ -38,7 +66,7 @@ function App() {
         },
         {
             key: '/packages',
-            label: <a href="/#packages" onClick={() => setOpen(false)}>Travel Packages</a>,
+            label: <a href="/#packages" onClick={handlePackagesClick}>Travel Packages</a>,
         },
         {
             key: '/contact',
@@ -51,98 +79,104 @@ function App() {
     ];
 
     return (
-        <Router>
-            <Layout style={{ minHeight: '100vh' }}>
-                <Header className="premium-header">
-                    <div className="header-content-inner">
-                        <Link to="/" className="app-logo-link">
-                            <img
-                                src="/logo-new.jpg"
-                                alt="Jyothu Travels"
-                                className="app-logo-image"
-                            />
-                        </Link>
-
-                        {/* Desktop Menu */}
-                        <Menu
-                            theme="light"
-                            mode="horizontal"
-                            defaultSelectedKeys={['/']}
-                            items={menuItems.map(item => ({
-                                ...item,
-                                icon: null
-                            }))}
-                            className="top-nav-menu desktop-only"
+        <Layout style={{ minHeight: '100vh' }}>
+            <Header className="premium-header">
+                <div className="header-content-inner">
+                    <Link to="/" className="app-logo-link">
+                        <img
+                            src="/logo-new.jpg"
+                            alt="Jyothu Travels"
+                            className="app-logo-image"
                         />
+                    </Link>
 
-                        <div className="header-right-group">
-                            <div className="header-cta desktop-only">
-                                <Button type="primary" icon={<PhoneOutlined />} href="tel:+919742100545" className="header-call-btn">
-                                    Call Now
-                                </Button>
-                            </div>
-
-                            {/* Mobile Hamburger */}
-                            <Button
-                                className="mobile-only hamburger-btn"
-                                type="text"
-                                icon={<MenuOutlined />}
-                                onClick={() => setOpen(true)}
-                                style={{ fontSize: '24px' }}
-                            />
-                        </div>
-                    </div>
-                </Header>
-
-                <Drawer
-                    title={<Title level={4} style={{ margin: 0 }}>Menu</Title>}
-                    placement="right"
-                    onClose={() => setOpen(false)}
-                    open={open}
-                    width={280}
-                    className="mobile-drawer"
-                >
+                    {/* Desktop Menu */}
                     <Menu
-                        mode="vertical"
-                        defaultSelectedKeys={['/']}
-                        items={menuItems}
-                        style={{ border: 'none' }}
+                        theme="light"
+                        mode="horizontal"
+                        defaultSelectedKeys={[location.pathname]}
+                        items={menuItems.map(item => ({
+                            ...item,
+                            icon: null
+                        }))}
+                        className="top-nav-menu desktop-only"
                     />
-                    <div style={{ marginTop: 30, padding: '0 16px' }}>
-                        <Button type="primary" block size="large" icon={<PhoneOutlined />} href="tel:+919742100545">
-                            Call Now
-                        </Button>
-                    </div>
-                </Drawer>
 
-                <Content
-                    style={{
-                        padding: '0',
-                        marginTop: 0,
-                    }}
-                >
-                    <div className="content-wrapper">
-                        <Routes>
-                            <Route path="/" element={<Dashboard />} />
-                            <Route path="/about" element={<AboutUs />} />
-                            <Route path="/contact" element={<ContactUs />} />
-                            <Route path="/terms" element={<Terms />} />
-                        </Routes>
+                    <div className="header-right-group">
+                        <div className="header-cta desktop-only">
+                            <Button type="primary" icon={<PhoneOutlined />} href="tel:+919742100545" className="header-call-btn">
+                                Call Now
+                            </Button>
+                        </div>
+
+                        {/* Mobile Hamburger */}
+                        <Button
+                            className="mobile-only hamburger-btn"
+                            type="text"
+                            icon={<MenuOutlined />}
+                            onClick={() => setOpen(true)}
+                            style={{ fontSize: '24px' }}
+                        />
                     </div>
-                </Content>
-                <Footer style={{ textAlign: 'center', padding: '60px 0', background: 'lightblue', color: '#050c15ff', borderTop: '1px solid #f1f5f9' }}>
-                    <div style={{ marginBottom: 20 }}>
-                        <Title level={4} style={{ color: 'var(--primary-deep)', margin: 0 }}>JYOTHU TRAVELS AND TOURISM</Title>
-                        <Text type="secondary">Your reliable travel partner in Hubli</Text>
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <a href="https://www.instagram.com/karnatakatour23?igsh=Ymdkb3R1OHl5NXkw" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)', color: 'white', padding: '10px 24px', borderRadius: '30px', fontSize: 16, fontWeight: 600, textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease', boxShadow: '0 4px 15px rgba(225, 48, 108, 0.4)' }}>
-                            <InstagramOutlined style={{ fontSize: 20 }} /> Follow us on Instagram
-                        </a>
-                    </div>
-                    {new Date().getFullYear()} © JYOTHU TRAVELS AND TOURISM. All rights reserved.
-                </Footer>
-            </Layout>
+                </div>
+            </Header>
+
+            <Drawer
+                title={<Title level={4} style={{ margin: 0 }}>Menu</Title>}
+                placement="right"
+                onClose={() => setOpen(false)}
+                open={open}
+                width={280}
+                className="mobile-drawer"
+            >
+                <Menu
+                    mode="vertical"
+                    defaultSelectedKeys={[location.pathname]}
+                    items={menuItems}
+                    style={{ border: 'none' }}
+                />
+                <div style={{ marginTop: 30, padding: '0 16px' }}>
+                    <Button type="primary" block size="large" icon={<PhoneOutlined />} href="tel:+919742100545">
+                        Call Now
+                    </Button>
+                </div>
+            </Drawer>
+
+            <Content
+                style={{
+                    padding: '0',
+                    marginTop: 0,
+                }}
+            >
+                <div className="content-wrapper">
+                    <Routes>
+                        <Route path="/" element={<Dashboard />} />
+                        <Route path="/about" element={<AboutUs />} />
+                        <Route path="/contact" element={<ContactUs />} />
+                        <Route path="/terms" element={<Terms />} />
+                    </Routes>
+                </div>
+            </Content>
+            <Footer style={{ textAlign: 'center', padding: '60px 0', background: 'lightblue', color: '#050c15ff', borderTop: '1px solid #f1f5f9' }}>
+                <div style={{ marginBottom: 20 }}>
+                    <Title level={4} style={{ color: 'var(--primary-deep)', margin: 0 }}>JYOTHU TRAVELS AND TOURISM</Title>
+                    <Text type="secondary">Your reliable travel partner in Hubli</Text>
+                </div>
+                <div style={{ marginBottom: 20 }}>
+                    <a href="https://www.instagram.com/karnatakatour23?igsh=Ymdkb3R1OHl5NXkw" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)', color: 'white', padding: '10px 24px', borderRadius: '30px', fontSize: 16, fontWeight: 600, textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease', boxShadow: '0 4px 15px rgba(225, 48, 108, 0.4)' }}>
+                        <InstagramOutlined style={{ fontSize: 20 }} /> Follow us on Instagram
+                    </a>
+                </div>
+                {new Date().getFullYear()} © JYOTHU TRAVELS AND TOURISM. All rights reserved.
+            </Footer>
+        </Layout>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <AppContent />
         </Router>
     );
 }
