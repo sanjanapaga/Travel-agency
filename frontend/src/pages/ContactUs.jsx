@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Row, Col, Form, Input, Button, Card, message, Tag, Tooltip, Select } from 'antd';
-import { MailOutlined, PhoneOutlined, EnvironmentOutlined, SendOutlined } from '@ant-design/icons';
+import { MailOutlined, PhoneOutlined, EnvironmentOutlined, SendOutlined, InstagramOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
@@ -102,6 +102,16 @@ const ContactUs = () => {
                                     </div>
                                 </a>
                             </Tooltip>
+
+                            <a href="https://www.instagram.com/karnatakatour23?igsh=Ymdkb3R1OHl5NXkw" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: 24, textDecoration: 'none', marginTop: 40 }}>
+                                <div className="stat-icon-box" style={{ background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)', color: 'white', borderRadius: '16px' }}>
+                                    <InstagramOutlined />
+                                </div>
+                                <div>
+                                    <Paragraph style={{ color: '#cbd5e1', margin: 0, fontWeight: 600 }}>Follow Us</Paragraph>
+                                    <Title level={4} style={{ color: 'white', margin: 0, fontWeight: 700 }}>@karnatakatour23</Title>
+                                </div>
+                            </a>
                         </div>
                     </Card>
                 </Col>
@@ -162,7 +172,7 @@ const ContactUs = () => {
 
                             <Row gutter={24}>
                                 <Col xs={24} md={12}>
-                                    <Form.Item label="Date / Time" name="datetime" initialValue="13/02/2026">
+                                    <Form.Item label="Date / Time" name="datetime">
                                         <Input size="large" placeholder="13/02/2026" style={{ borderRadius: '12px' }} />
                                     </Form.Item>
                                 </Col>

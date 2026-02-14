@@ -130,24 +130,37 @@ body {
 }
 
 .app-logo-image {
-  height: 100px;
-  /* Reduced size */
+  height: 120px;
+  /* Slightly reduced size */
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
   /* Simulating sticker look by blending background and adding subtle depth */
   mix-blend-mode: multiply;
   filter: contrast(1.1);
   margin-top: 25px;
   margin-left: 90px;
   /* Moved further to the right */
+  position: relative;
+  animation: logoRun 3s ease-in-out infinite;
+  /* Running animation */
 }
 
+@keyframes logoRun {
 
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
 
 .app-logo-image:hover {
-  transform: scale(1.05) rotate(-2deg);
-  /* Interactive sticker feel */
+  animation-play-state: paused;
+  /* Pause animation on hover */
+  transform: scale(1.05);
 }
 
 .top-nav-menu {

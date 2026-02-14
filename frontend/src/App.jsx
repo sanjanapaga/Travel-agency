@@ -9,7 +9,8 @@ import {
     PhoneOutlined,
     FileTextOutlined,
     RocketOutlined,
-    MenuOutlined
+    MenuOutlined,
+    InstagramOutlined
 } from '@ant-design/icons';
 import Dashboard from './pages/Dashboard';
 import AboutUs from './pages/AboutUs';
@@ -55,7 +56,11 @@ function App() {
                 <Header className="premium-header">
                     <div className="header-content-inner">
                         <Link to="/" className="app-logo-link">
-                            <img src="/logo-new.jpg" alt="Jyothu Travels" className="app-logo-image" />
+                            <img
+                                src="/logo-new.jpg"
+                                alt="Jyothu Travels"
+                                className="app-logo-image"
+                            />
                         </Link>
 
                         {/* Desktop Menu */}
@@ -129,6 +134,11 @@ function App() {
                     <div style={{ marginBottom: 20 }}>
                         <Title level={4} style={{ color: 'var(--primary-deep)', margin: 0 }}>JYOTHU TRAVELS AND TOURISM</Title>
                         <Text type="secondary">Your reliable travel partner in Hubli</Text>
+                    </div>
+                    <div style={{ marginBottom: 20 }}>
+                        <a href="https://www.instagram.com/karnatakatour23?igsh=Ymdkb3R1OHl5NXkw" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)', color: 'white', padding: '10px 24px', borderRadius: '30px', fontSize: 16, fontWeight: 600, textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease', boxShadow: '0 4px 15px rgba(225, 48, 108, 0.4)' }}>
+                            <InstagramOutlined style={{ fontSize: 20 }} /> Follow us on Instagram
+                        </a>
                     </div>
                     {new Date().getFullYear()} © JYOTHU TRAVELS AND TOURISM. All rights reserved.
                 </Footer>
