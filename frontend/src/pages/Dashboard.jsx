@@ -593,7 +593,7 @@ const Dashboard = () => {
                     <Title level={2} className="text-gradient-mixed">Choose Your Perfect Ride</Title>
                 </div>
 
-                <Row gutter={[24, 24]}>
+                <Row gutter={[{ xs: 0, sm: 16, md: 24, lg: 24 }, 24]}>
                     {fleet.map((car) => (
                         <Col xs={24} sm={12} lg={6} key={car.id}>
                             <Card variant="borderless" className="fleet-card-premium vibrant-card glow-blue" cover={
@@ -668,124 +668,121 @@ const Dashboard = () => {
             </div>
 
             {/* Corporate & Rental Services Overview */}
-            <section className="services-highlight-box">
+            {/* Services Highlight Container */}
+            <div id="services-section" className="services-highlight-box" style={{ marginBottom: 80 }}>
                 <div style={{ textAlign: 'center', marginBottom: 60 }}>
-                    <div className="welcome-badge">
+                    <div className="section-title-premium" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                         <ThunderboltOutlined /> OUR SERVICES
                     </div>
-                    <Title level={2} style={{ fontSize: 48, fontWeight: 900, marginBottom: 30 }}>
+                    <Title level={2} style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 900, marginBottom: 30 }}>
                         Welcome to Our Premium Services
                     </Title>
-                    <Paragraph className="service-main-text" style={{ margin: '0 auto' }}>
+                    <Paragraph className="service-main-text" style={{ margin: '0 auto', maxWidth: '850px' }}>
                         We provide reliable Corporate Cab Services, Buses, and Tempo Traveller rentals for both local and outstation travel. With a wide range of vehicles to choose from, our customers can find the perfect option for every need—from daily commutes to long-distance trips.
                     </Paragraph>
                     <br />
-                    <Paragraph className="service-main-text" style={{ margin: '0 auto' }}>
+                    <Paragraph className="service-main-text" style={{ margin: '0 auto', maxWidth: '850px' }}>
                         For businesses, we offer Customized Vehicle Rental Solutions designed to meet the specialized requirements of corporate clients, ensuring comfort, punctuality, and professionalism. Additionally, our 24×7 Cab Services are available for hassle-free pick-up and drop, making travel smooth, safe, and convenient at any time of the day.
                     </Paragraph>
-
-                    {/* Quick Booking Categories */}
-                    <Row gutter={[24, 24]} className="service-category-grid" style={{ marginBottom: 60 }}>
-                        <Col xs={24} sm={12} lg={6}>
-                            <div className="category-booking-card">
-                                <div className="category-icon-round blue">
-                                    <CarOutlined />
-                                </div>
-                                <Title level={4} style={{ color: '#000' }}>Economic Cars Booking</Title>
-                                {/* <Button type="primary" size="small" shape="round" href="tel:+919742100545">Book Now</Button> */}
-                            </div>
-                        </Col>
-                        <Col xs={24} sm={12} lg={6}>
-                            <div className="category-booking-card">
-                                <div className="category-icon-round orange">
-                                    <TeamOutlined />
-                                </div>
-                                <Title level={4} style={{ color: '#000' }}>Tempo Traveller Booking</Title>
-                                {/* <Button type="primary" size="small" shape="round" href="tel:+919742100545">Book Now</Button> */}
-                            </div>
-                        </Col>
-                        <Col xs={24} sm={12} lg={6}>
-                            <div className="category-booking-card">
-                                <div className="category-icon-round green">
-                                    <TeamOutlined />
-                                </div>
-                                <Title level={4} style={{ color: '#000' }}>Bus Traveller Booking</Title>
-                                {/* <Button type="primary" size="small" shape="round" href="tel:+919742100545">Book Now</Button> */}
-                            </div>
-                        </Col>
-                        <Col xs={24} sm={12} lg={6}>
-                            <div className="category-booking-card">
-                                <div className="category-icon-round purple">
-                                    <CarOutlined />
-                                </div>
-                                <Title level={4} style={{ color: '#000' }}>SUV's Cars Booking</Title>
-                                {/* <Button type="primary" size="small" shape="round" href="tel:+919742100545">Book Now</Button> */}
-                            </div>
-                        </Col>
-                    </Row>
-
-                    {/* New Premium Coach Listing */}
-                    <div style={{ marginTop: 20 }}>
-                        <div className="section-title-premium" style={{ background: 'var(--orange-gradient)' }}>
-                            <TeamOutlined /> PREMIUM COACH COLLECTION
-                        </div>
-                        <Title level={2} className="text-gradient-orange" style={{ marginBottom: 50 }}>Luxury Tempo Travellers & Buses</Title>
-
-                        <Row gutter={[24, 24]}>
-                            {coachFleet.map((coach) => (
-                                <Col xs={24} sm={12} lg={8} key={coach.id}>
-                                    <Card variant="borderless" className="fleet-card-premium vibrant-card glow-orange" cover={
-                                        <div className="fleet-img-container" style={{ backgroundImage: `url(${coach.image})` }}>
-                                            <div className="capacity-badge">{coach.capacity}</div>
-                                        </div>
-                                    }>
-                                        <div className="fleet-body">
-                                            <div className="fleet-header">
-                                                <Tag color="orange">{coach.category}</Tag>
-                                                <div className="rating">
-                                                    <StarFilled style={{ color: '#fbbf24' }} /> 5.0
-                                                </div>
-                                            </div>
-                                            <Title level={4} style={{ marginBottom: 10 }}>{coach.name}</Title>
-                                            <Text type="secondary" style={{ display: 'block', marginBottom: 15 }}>{coach.description}</Text>
-
-                                            <div className="price-grid-detailed">
-                                                <div className="price-section-divider">Outstation (Per Km)</div>
-                                                <Row gutter={12}>
-                                                    <Col span={12}>
-                                                        <div className="pricing-mini-card nac">
-                                                            <Text type="secondary">Non-AC</Text>
-                                                            <Text strong>{coach.outstation.nac}</Text>
-                                                        </div>
-                                                    </Col>
-                                                    <Col span={12}>
-                                                        <div className="pricing-mini-card ac">
-                                                            <Text type="secondary">AC</Text>
-                                                            <Text strong>{coach.outstation.ac}</Text>
-                                                        </div>
-                                                    </Col>
-                                                </Row>
-                                            </div>
-
-                                            <div style={{ display: 'flex', gap: 10, marginTop: 25 }}>
-                                                <Button type="primary" block className="call-us-btn booking-btn-luxury" icon={<PhoneOutlined />} href="tel:+919742100545">
-                                                    Call Us
-                                                </Button>
-                                                <Button block className="enquiry-btn" href="/contact">
-                                                    Enquiry
-                                                </Button>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                </Col>
-                            ))}
-                        </Row>
-                    </div>
                 </div>
-            </section>
+
+                {/* Quick Booking Categories */}
+                <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 24 }, 24]} className="service-category-grid" style={{ marginBottom: 60 }}>
+                    <Col xs={24} sm={12} lg={6}>
+                        <div className="category-booking-card">
+                            <div className="category-icon-round blue">
+                                <CarOutlined />
+                            </div>
+                            <Title level={4} style={{ color: '#000' }}>Economic Cars Booking</Title>
+                        </div>
+                    </Col>
+                    <Col xs={24} sm={12} lg={6}>
+                        <div className="category-booking-card">
+                            <div className="category-icon-round orange">
+                                <TeamOutlined />
+                            </div>
+                            <Title level={4} style={{ color: '#000' }}>Tempo Traveller Booking</Title>
+                        </div>
+                    </Col>
+                    <Col xs={24} sm={12} lg={6}>
+                        <div className="category-booking-card">
+                            <div className="category-icon-round green">
+                                <TeamOutlined />
+                            </div>
+                            <Title level={4} style={{ color: '#000' }}>Bus Traveller Booking</Title>
+                        </div>
+                    </Col>
+                    <Col xs={24} sm={12} lg={6}>
+                        <div className="category-booking-card">
+                            <div className="category-icon-round purple">
+                                <CarOutlined />
+                            </div>
+                            <Title level={4} style={{ color: '#000' }}>SUV's Cars Booking</Title>
+                        </div>
+                    </Col>
+                </Row>
+
+                {/* Premium Coach Listing */}
+                <div style={{ marginTop: 60 }}>
+                    <div className="section-title-premium" style={{ background: 'var(--orange-gradient)', marginLeft: 'auto', marginRight: 'auto' }}>
+                        <TeamOutlined /> PREMIUM COACH COLLECTION
+                    </div>
+                    <Title level={2} className="text-gradient-orange" style={{ marginBottom: 50, textAlign: 'center' }}>Luxury Tempo Travellers & Buses</Title>
+
+                    <Row gutter={[{ xs: 0, sm: 16, md: 24, lg: 24 }, 24]}>
+                        {coachFleet.map((coach) => (
+                            <Col xs={24} sm={12} lg={8} key={coach.id}>
+                                <Card variant="borderless" className="fleet-card-premium vibrant-card glow-orange" cover={
+                                    <div className="fleet-img-container" style={{ backgroundImage: `url(${coach.image})` }}>
+                                        <div className="capacity-badge">{coach.capacity}</div>
+                                    </div>
+                                }>
+                                    <div className="fleet-body">
+                                        <div className="fleet-header">
+                                            <Tag color="orange">{coach.category}</Tag>
+                                            <div className="rating">
+                                                <StarFilled style={{ color: '#fbbf24' }} /> 5.0
+                                            </div>
+                                        </div>
+                                        <Title level={4} style={{ marginBottom: 10 }}>{coach.name}</Title>
+                                        <Text type="secondary" style={{ display: 'block', marginBottom: 15 }}>{coach.description}</Text>
+
+                                        <div className="price-grid-detailed">
+                                            <div className="price-section-divider">Outstation (Per Km)</div>
+                                            <Row gutter={12}>
+                                                <Col span={12}>
+                                                    <div className="pricing-mini-card nac">
+                                                        <Text type="secondary">Non-AC</Text>
+                                                        <Text strong>{coach.outstation.nac}</Text>
+                                                    </div>
+                                                </Col>
+                                                <Col span={12}>
+                                                    <div className="pricing-mini-card ac">
+                                                        <Text type="secondary">AC</Text>
+                                                        <Text strong>{coach.outstation.ac}</Text>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                        </div>
+
+                                        <div style={{ display: 'flex', gap: 10, marginTop: 25 }}>
+                                            <Button type="primary" block className="call-us-btn booking-btn-luxury" icon={<PhoneOutlined />} href="tel:+919742100545">
+                                                Call Us
+                                            </Button>
+                                            <Button block className="enquiry-btn" href="/contact">
+                                                Enquiry
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </div>
 
             {/* Travel Packages */}
-            < div id="packages" className="scroll-section" style={{ marginBottom: 60 }}>
+            <div id="packages" className="scroll-section" style={{ marginBottom: 60 }}>
                 <div className="section-header">
                     <div className="section-title-premium">
                         <RocketOutlined /> POPULAR HOLIDAY PACKAGES
@@ -793,7 +790,7 @@ const Dashboard = () => {
                     <Title level={2}>Explore Beautiful Destinations</Title>
                 </div>
 
-                <Row gutter={[24, 24]}>
+                <Row gutter={[{ xs: 0, sm: 16, md: 24, lg: 24 }, 24]}>
                     {travelPackages.map((pkg, idx) => (
                         <Col xs={24} sm={12} lg={8} key={idx}>
                             <Card className="package-card-premium vibrant-card glow-orange" cover={

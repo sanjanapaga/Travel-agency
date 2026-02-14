@@ -80,6 +80,18 @@ body {
   padding: 40px;
 }
 
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content-inner {
+    padding: 0 12px;
+  }
+}
+
 .header-content-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -1611,6 +1623,35 @@ section {
   /* Removed !important to allow specific section overrides */
 }
 
+@media (max-width: 768px) {
+  section {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .services-highlight-box {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .ant-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .ant-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .fleet-card-premium,
+  .package-card-premium {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 .content-wrapper {
   max-width: 100%;
   padding: 0 !important;
@@ -1619,7 +1660,7 @@ section {
 /* Fleet Card Adjustments */
 @media (max-width: 480px) {
   .fleet-img-container {
-    height: 160px;
+    height: 220px;
   }
 
   .fleet-body {
